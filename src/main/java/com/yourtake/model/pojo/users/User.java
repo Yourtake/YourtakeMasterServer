@@ -25,6 +25,7 @@ public class User implements Serializable {
     private String password;
     private Integer power;
     private String role;
+    private String organization;
     private Boolean access;
     @OneToOne(mappedBy="supervisor")
     private Team team;
@@ -103,6 +104,14 @@ public class User implements Serializable {
 
     public void setParentTeam(Team parentTeam) {
         this.parentTeam = parentTeam;
+    }
+
+    public String getOrganization() {
+        return organization;
+    }
+
+    public void setOrganization(String organization) {
+        this.organization = organization;
     }
     
     
