@@ -11,9 +11,10 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
 
 /**
  *
@@ -28,8 +29,9 @@ public class Rule implements Serializable {
     private Double lowerCap;
     private Double upperCap;
     @ManyToOne
-    private Organization organzation;
+    private Organization organization;
     @OneToMany(mappedBy="rule")
+    @Cascade({CascadeType.DELETE,CascadeType.MERGE})
     private List<Contact> contacts = new ArrayList<>();
 
     public Long getId() {
@@ -64,14 +66,15 @@ public class Rule implements Serializable {
         this.upperCap = upperCap;
     }
 
-    public Organization getOrganzation() {
-        return organzation;
+    public Organization getOrganization() {
+        return organization;
     }
 
-    public void setOrganzation(Organization organzation) {
-        this.organzation = organzation;
+    public void setOrganization(Organization organization) {
+        this.organization = organization;
     }
 
+    
     public List<Contact> getContacts() {
         return contacts;
     }

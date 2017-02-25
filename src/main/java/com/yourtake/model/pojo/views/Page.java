@@ -14,6 +14,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
 
 /**
  *
@@ -30,12 +32,16 @@ public class Page implements Serializable {
     private String backgroundImageUrl;
     private String submitUrl;
     @OneToOne(mappedBy="page")
+    @Cascade({CascadeType.DELETE,CascadeType.MERGE})
     private FormInput form;
     @OneToOne(mappedBy="page")
+    @Cascade({CascadeType.DELETE,CascadeType.MERGE})
     private Header header;
     @OneToOne(mappedBy="page")
+    @Cascade({CascadeType.DELETE,CascadeType.MERGE})
     private Footer footer;
     @OneToMany(mappedBy="page")
+    @Cascade({CascadeType.DELETE,CascadeType.MERGE})
     private List<Tab> tabs= new ArrayList<>();
     @ManyToOne
     private View view; 

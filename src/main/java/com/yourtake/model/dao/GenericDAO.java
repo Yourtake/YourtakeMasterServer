@@ -5,6 +5,8 @@
  */
 package com.yourtake.model.dao;
 
+import org.hibernate.SessionFactory;
+
 /**
  *
  * @author MumbaiZone
@@ -18,6 +20,9 @@ public interface GenericDAO <T>{
      public boolean delete(T object);
      
      public T readWithList(String criteria,String property);
+     
+     public SessionFactory getFactory();
+     public void setFactory(SessionFactory factory);
     
     
 }

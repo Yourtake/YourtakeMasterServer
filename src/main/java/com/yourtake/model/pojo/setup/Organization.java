@@ -8,11 +8,14 @@ package com.yourtake.model.pojo.setup;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
 
 /**
  *
@@ -25,16 +28,20 @@ public class Organization implements Serializable {
     private Long id;
     private String name;
     private String type;
+    @Column(unique = true)
     private String url;
-    private Integer live_count;
+    private Integer liveCount;
     private Integer count;
     private String barcodeImageUrl;
     private String metadata;
     @OneToOne(mappedBy = "masterRelation")
+    @Cascade({CascadeType.DELETE,CascadeType.MERGE})
     private Branch master;
     @OneToMany(mappedBy = "branchRelation")
+    @Cascade({CascadeType.DELETE,CascadeType.MERGE})
     private List<Branch> branches = new ArrayList<>();
     @OneToMany(mappedBy = "organization")
+    @Cascade({CascadeType.DELETE,CascadeType.MERGE})
     private List<Rule> rules = new ArrayList<>();
 
     public Long getId() {
@@ -69,13 +76,15 @@ public class Organization implements Serializable {
         this.url = url;
     }
 
-    public Integer getLive_count() {
-        return live_count;
+    public Integer getLiveCount() {
+        return liveCount;
     }
 
-    public void setLive_count(Integer live_count) {
-        this.live_count = live_count;
+    public void setLiveCount(Integer liveCount) {
+        this.liveCount = liveCount;
     }
+
+    
 
     public Integer getCount() {
         return count;
