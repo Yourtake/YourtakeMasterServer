@@ -3,13 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.yourtake.model.pojo;
+package com.yourtake.model.dao.views;
 
 /**
  *
  * @author MumbaiZone
  */
-public class Offers {
-    String offerImageURL;
-    String offer;
+public class ViewDAO {
+    
 }

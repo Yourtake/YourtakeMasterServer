@@ -3,44 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.yourtake.model.dao;
-
-import java.util.List;
 
 /**
  *
- * @author Welcome
+ * @author MumbaiZone
+ * @param <T>
  */
-public interface GenericDAO<T> {
+public interface GenericDAO <T>{
     
-  public T buildEntity(T entity);
-  
-  public T buildEntity(T entity, boolean coded);
-  
-  public boolean addPropertyList(T entity, T property,String listType);
-  
-  public T readProperty(T paramId);
-  
- 
-  
-  public T readPropertyList(T entity,String listType); 
-  
-  public boolean updateProperty(T entity,T paramVal, String paramType);
-  
-  public boolean updatePropertyList(T entity,T property,String listType);
-  
-  public boolean deleteEntity(T entity);
-  
-  public T deletePropertyList(T entity,T property,String listType);
-  
-  public List fetchEntities(String paramVal);
-  
-  public T fetchEntity(T property);
-  
-   public T buildInnerPropertyList(T entity, T property,String listType);
-   
-    public T readInnerPropertyList(T entity, String listType);
+    public T create(T object);
+     public T read(Object object);
+     public T update(T object);
+     public boolean delete(T object);
+     
+     public T readWithList(String criteria,String property);
     
-    public boolean deleteInnerPropertyList(T entity,T property,String listType);
+    
 }

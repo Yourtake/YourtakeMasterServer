@@ -24,7 +24,7 @@
         <br/>
     <center>
        
-        <h1>Its an error!!</h1>
+        <h1>Its an error!! ${error}</h1>
         
     </center>
     </body>

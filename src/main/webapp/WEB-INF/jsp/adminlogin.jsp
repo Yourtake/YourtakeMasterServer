@@ -49,6 +49,7 @@
         <h2 class="form-signin-heading" style="color:#ffffff">Please sign in</h2>
         <input type="text" class="form-control" name='j_username' placeholder="User Id" required autofocus>
         <input type="password" class="form-control" name='j_password'  placeholder="Password" required>
+    <%--   <input type="hidden"  name="${_csrf.parameterName}"   value="${_csrf.token}"/>--%>
         <label class="checkbox" style="color:#ffffff">
           <input type="checkbox" value="remember-me" name="_spring_security_remember_me" style="color:#000000"> Remember me
         </label>
