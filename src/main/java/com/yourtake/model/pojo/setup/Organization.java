@@ -28,7 +28,7 @@ public class Organization implements Serializable {
     private Long id;
     private String name;
     private String type;
-    @Column(unique = true)
+    @Column(unique = true,nullable = false)
     private String url;
     private Integer liveCount;
     private Integer count;

@@ -29,7 +29,7 @@ public class View implements Serializable {
     private String type;
     private String metadata;
     private String barcodeImageUrl;
-    @Column(unique = true)
+    @Column(unique = true,nullable=false)
     private String url;
     @OneToMany(mappedBy="view")
     @Cascade({CascadeType.DELETE,CascadeType.MERGE})
