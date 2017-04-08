@@ -6,7 +6,10 @@
 package com.yourtake.model.dao;
 
 import com.yourtake.model.pojo.users.Individual;
+import java.util.ArrayList;
+import java.util.List;
 import javax.annotation.Resource;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -23,28 +26,39 @@ public class IndividualDAO implements GenericDAO<Individual>{
     
     @Override
     public Individual create(Individual object) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+           Session  session = getSessionFactory().getCurrentSession();
+            session.save(object);
+            return (Individual) session.get(Individual.class, object.getEmail());
+                 
     }
 
     @Override
-    public Individual read(Object object) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<Individual> read(String criteia,Individual object) {
+        List<Individual> list= new ArrayList<>();
+        switch(criteia){
+            case "id":
+                    Session session = getSessionFactory().getCurrentSession();
+                     list.add((Individual) session.get(Individual.class, object.getEmail()));
+                break;
+            default:
+                break;
+        }
+        
+        return list;
     }
 
     @Override
     public Individual update(Individual object) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       Session session = getSessionFactory().getCurrentSession();
+        return (Individual) session.merge(object);
     }
 
     @Override
     public boolean delete(Individual object) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return false;
     }
 
-    @Override
-    public Individual readWithList(String criteria, String property) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
     
 @Override
     public SessionFactory getSessionFactory() {

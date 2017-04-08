@@ -31,6 +31,13 @@ public class Individual implements Serializable {
     private Team team;
    @ManyToOne
    private Team parentTeam;
+
+    public Individual() {
+    }
+
+    public Individual(String email) {
+        this.email=email;
+    }
     
 
     public String getEmail() {

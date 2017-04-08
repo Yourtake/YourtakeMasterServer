@@ -6,7 +6,10 @@
 package com.yourtake.model.dao;
 
 import com.yourtake.model.pojo.setup.Organization;
+import java.util.ArrayList;
+import java.util.List;
 import javax.annotation.Resource;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -18,36 +21,46 @@ import org.springframework.stereotype.Repository;
 @Repository
 @Resource(name="organizationDAO")
 public class OrganizationDAO implements GenericDAO<Organization> {
-
-    @Autowired
+@Autowired
     SessionFactory sessionFactory;
     
     @Override
     public Organization create(Organization object) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+           Session  session = getSessionFactory().getCurrentSession();
+            session.save(object);
+            return (Organization) session.get(Organization.class, object.getId());
+                 
     }
 
     @Override
-    public Organization read(Object object) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<Organization> read(String criteia,Organization object) {
+        List<Organization> list= new ArrayList<>();
+        switch(criteia){
+            case "id":
+                    Session session = getSessionFactory().getCurrentSession();
+                     list.add((Organization) session.get(Organization.class, object.getId()));
+                break;
+            default:
+                break;
+        }
+        
+        return list;
     }
 
     @Override
     public Organization update(Organization object) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       Session session = getSessionFactory().getCurrentSession();
+        return (Organization) session.merge(object);
     }
 
     @Override
     public boolean delete(Organization object) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return false;
     }
 
-    @Override
-    public Organization readWithList(String criteria, String property) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
- @Override
+    
+    
+@Override
     public SessionFactory getSessionFactory() {
         return sessionFactory;
     }
@@ -56,7 +69,5 @@ public class OrganizationDAO implements GenericDAO<Organization> {
     public void setSessionFactory(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
-
-    
     
 }

@@ -23,7 +23,7 @@ public class InitController {
     
      @RequestMapping(value="/")
    public ModelAndView sendHomePage(HttpServletRequest request){
-       return new ModelAndView("home");
+       return new ModelAndView("init");
    }
       @RequestMapping(value="/adminlogin")
    public ModelAndView sendAdminLogin(HttpServletRequest request){

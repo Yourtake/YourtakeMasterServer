@@ -6,7 +6,10 @@
 package com.yourtake.model.dao;
 
 import com.yourtake.model.pojo.users.Team;
+import java.util.ArrayList;
+import java.util.List;
 import javax.annotation.Resource;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -23,30 +26,41 @@ public class TeamDAO implements GenericDAO<Team>{
     
     @Override
     public Team create(Team object) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+           Session  session = getSessionFactory().getCurrentSession();
+            session.save(object);
+            return (Team) session.get(Team.class, object.getId());
+                 
     }
 
     @Override
-    public Team read(Object object) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<Team> read(String criteia,Team object) {
+        List<Team> list= new ArrayList<>();
+        switch(criteia){
+            case "id":
+                    Session session = getSessionFactory().getCurrentSession();
+                     list.add((Team) session.get(Team.class, object.getId()));
+                break;
+            default:
+                break;
+        }
+        
+        return list;
     }
 
     @Override
     public Team update(Team object) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       Session session = getSessionFactory().getCurrentSession();
+        return (Team) session.merge(object);
     }
 
     @Override
     public boolean delete(Team object) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return false;
     }
 
-    @Override
-    public Team readWithList(String criteria, String property) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
-   @Override
+    
+@Override
     public SessionFactory getSessionFactory() {
         return sessionFactory;
     }
@@ -55,6 +69,4 @@ public class TeamDAO implements GenericDAO<Team>{
     public void setSessionFactory(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
-
-    
 }

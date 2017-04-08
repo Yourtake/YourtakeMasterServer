@@ -5,6 +5,7 @@
  */
 package com.yourtake.model.dao;
 
+import java.util.List;
 import org.hibernate.SessionFactory;
 
 /**
@@ -15,12 +16,9 @@ import org.hibernate.SessionFactory;
 public interface GenericDAO <T>{
     
     public T create(T object);
-     public T read(Object object);
+         public List<T> read(String criteria,T object);
      public T update(T object);
      public boolean delete(T object);
-     
-     public T readWithList(String criteria,String property);
-     
      public SessionFactory getSessionFactory();
      public void setSessionFactory(SessionFactory factory);
     

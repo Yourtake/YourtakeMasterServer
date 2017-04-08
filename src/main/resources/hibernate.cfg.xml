@@ -24,7 +24,7 @@
     <mapping class="com.yourtake.model.pojo.setup.Organization"/>
     <mapping class="com.yourtake.model.pojo.setup.Rule"/>
     
-    <mapping class="com.yourtake.model.pojo.users.User"/>
+    <mapping class="com.yourtake.model.pojo.users.Individual"/>
     <mapping class="com.yourtake.model.pojo.users.Team"/>
     
     <mapping class="com.yourtake.model.pojo.views.Footer"/>

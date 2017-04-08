@@ -39,7 +39,7 @@ public class LoginService implements UserDetailsService {
     public UserDetails loadUserByUsername(String login)throws UsernameNotFoundException, DataAccessException {
 
 
-           domainUser = (Individual) individualDAO.read(login);
+           domainUser = (Individual) individualDAO.read("id",new Individual(login));
             try{
                 domainUser.getEmail();
                 domainUser.getPassword();
