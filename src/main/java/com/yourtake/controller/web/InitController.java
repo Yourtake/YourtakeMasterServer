@@ -25,7 +25,17 @@ public class InitController {
    public ModelAndView sendHomePage(HttpServletRequest request){
        return new ModelAndView("home");
    }
-     
+      @RequestMapping(value="/adminlogin")
+   public ModelAndView sendAdminLogin(HttpServletRequest request){
+       return new ModelAndView("adminlogin");
+   }
+   
+     @RequestMapping(value="/admin")
+   public ModelAndView sendAdminPage(HttpServletRequest request){
+       return new ModelAndView("adminpage");
+   }
+   
+   
      
     @PostConstruct
     public void init() {

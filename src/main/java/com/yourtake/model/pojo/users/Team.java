@@ -26,10 +26,10 @@ public class Team implements Serializable {
     private Long id;
     
     @OneToOne
-    private User supervisor;
+    private Individual supervisor;
     
     @OneToMany(mappedBy="parentTeam")
-    private List<User> members = new ArrayList<>();
+    private List<Individual> members = new ArrayList<>();
     
     public Long getId() {
         return id;
@@ -40,19 +40,19 @@ public class Team implements Serializable {
     }
 
 
-    public User getSupervisor() {
+    public Individual getSupervisor() {
         return supervisor;
     }
 
-    public void setSupervisor(User supervisor) {
+    public void setSupervisor(Individual supervisor) {
         this.supervisor = supervisor;
     }
 
-    public List<User> getMembers() {
+    public List<Individual> getMembers() {
         return members;
     }
 
-    public void setMembers(List<User> members) {
+    public void setMembers(List<Individual> members) {
         this.members = members;
     }
     

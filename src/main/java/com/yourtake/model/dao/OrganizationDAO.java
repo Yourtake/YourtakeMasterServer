@@ -6,6 +6,7 @@
 package com.yourtake.model.dao;
 
 import com.yourtake.model.pojo.setup.Organization;
+import javax.annotation.Resource;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -15,10 +16,11 @@ import org.springframework.stereotype.Repository;
  * @author MumbaiZone
  */
 @Repository
+@Resource("organizationDAO")
 public class OrganizationDAO implements GenericDAO<Organization> {
 
     @Autowired
-    SessionFactory factory;
+    SessionFactory sessionFactory;
     
     @Override
     public Organization create(Organization object) {
@@ -45,13 +47,16 @@ public class OrganizationDAO implements GenericDAO<Organization> {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public SessionFactory getFactory() {
-        return factory;
+ @Override
+    public SessionFactory getSessionFactory() {
+        return sessionFactory;
     }
 
-    public void setFactory(SessionFactory factory) {
-        this.factory = factory;
+@Override
+    public void setSessionFactory(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
     }
+
     
     
 }

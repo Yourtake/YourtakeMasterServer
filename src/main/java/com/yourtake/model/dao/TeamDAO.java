@@ -6,6 +6,7 @@
 package com.yourtake.model.dao;
 
 import com.yourtake.model.pojo.users.Team;
+import javax.annotation.Resource;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -15,9 +16,10 @@ import org.springframework.stereotype.Repository;
  * @author MumbaiZone
  */
 @Repository
+@Resource("teamDAO")
 public class TeamDAO implements GenericDAO<Team>{
 @Autowired
-    SessionFactory factory;
+    SessionFactory sessionFactory;
     
     @Override
     public Team create(Team object) {
@@ -44,12 +46,15 @@ public class TeamDAO implements GenericDAO<Team>{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
-    public SessionFactory getFactory() {
-        return factory;
+   @Override
+    public SessionFactory getSessionFactory() {
+        return sessionFactory;
     }
 
-    public void setFactory(SessionFactory factory) {
-        this.factory = factory;
+@Override
+    public void setSessionFactory(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
     }
+
     
 }

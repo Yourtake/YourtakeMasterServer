@@ -16,7 +16,7 @@ import javax.persistence.OneToOne;
  * @author MumbaiZone
  */
 @Entity
-public class User implements Serializable {
+public class Individual implements Serializable {
     
     @Id
     private String email;
@@ -24,7 +24,7 @@ public class User implements Serializable {
     private String name;
     private String password;
     private Integer power;
-    private String role;
+    private String myRole;
     private String organization;
     private Boolean access;
     @OneToOne(mappedBy="supervisor")
@@ -73,13 +73,15 @@ public class User implements Serializable {
         this.power = power;
     }
 
-    public String getRole() {
-        return role;
+    public String getMyRole() {
+        return myRole;
     }
 
-    public void setRole(String role) {
-        this.role = role;
+    public void setMyRole(String myRole) {
+        this.myRole = myRole;
     }
+
+   
 
     public Team getTeam() {
         return team;

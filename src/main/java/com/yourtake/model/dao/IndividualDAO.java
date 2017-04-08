@@ -5,7 +5,8 @@
  */
 package com.yourtake.model.dao;
 
-import com.yourtake.model.pojo.users.User;
+import com.yourtake.model.pojo.users.Individual;
+import javax.annotation.Resource;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -15,41 +16,44 @@ import org.springframework.stereotype.Repository;
  * @author MumbaiZone
  */
 @Repository
-public class UserDAO implements GenericDAO<User>{
+@Resource("individualDAO")
+public class IndividualDAO implements GenericDAO<Individual>{
 @Autowired
-    SessionFactory factory;
+    SessionFactory sessionFactory;
     
     @Override
-    public User create(User object) {
+    public Individual create(Individual object) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public User read(Object object) {
+    public Individual read(Object object) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public User update(User object) {
+    public Individual update(Individual object) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean delete(User object) {
+    public boolean delete(Individual object) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public User readWithList(String criteria, String property) {
+    public Individual readWithList(String criteria, String property) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
-    public SessionFactory getFactory() {
-        return factory;
+@Override
+    public SessionFactory getSessionFactory() {
+        return sessionFactory;
     }
 
-    public void setFactory(SessionFactory factory) {
-        this.factory = factory;
+@Override
+    public void setSessionFactory(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
     }
-    
+
 }

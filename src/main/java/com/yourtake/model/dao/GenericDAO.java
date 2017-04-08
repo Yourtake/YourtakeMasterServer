@@ -21,8 +21,8 @@ public interface GenericDAO <T>{
      
      public T readWithList(String criteria,String property);
      
-     public SessionFactory getFactory();
-     public void setFactory(SessionFactory factory);
+     public SessionFactory getSessionFactory();
+     public void setSessionFactory(SessionFactory factory);
     
     
 }
