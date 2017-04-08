@@ -1,6 +1,6 @@
 C:\Users\MumbaiZone\Documents\NetBeansProjects\YourtakeProject\YourtakeProject\src\main\java\com\yourtake\model\pojo\views\Page.java
+C:\Users\MumbaiZone\Documents\NetBeansProjects\YourtakeProject\YourtakeProject\src\main\java\com\yourtake\model\pojo\users\Individual.java
 C:\Users\MumbaiZone\Documents\NetBeansProjects\YourtakeProject\YourtakeProject\src\main\java\com\yourtake\controller\web\UserBuildController.java
-C:\Users\MumbaiZone\Documents\NetBeansProjects\YourtakeProject\YourtakeProject\src\main\java\com\yourtake\model\pojo\users\User.java
 C:\Users\MumbaiZone\Documents\NetBeansProjects\YourtakeProject\YourtakeProject\src\main\java\com\yourtake\model\pojo\views\Footer.java
 C:\Users\MumbaiZone\Documents\NetBeansProjects\YourtakeProject\YourtakeProject\src\main\java\com\yourtake\controller\web\ViewBuildController.java
 C:\Users\MumbaiZone\Documents\NetBeansProjects\YourtakeProject\YourtakeProject\src\main\java\com\yourtake\model\pojo\setup\Branch.java
@@ -17,9 +17,10 @@ C:\Users\MumbaiZone\Documents\NetBeansProjects\YourtakeProject\YourtakeProject\s
 C:\Users\MumbaiZone\Documents\NetBeansProjects\YourtakeProject\YourtakeProject\src\main\java\com\yourtake\backend\service\core\login\DefaultAuthenticationFailureHandler.java
 C:\Users\MumbaiZone\Documents\NetBeansProjects\YourtakeProject\YourtakeProject\src\main\java\com\yourtake\model\pojo\users\Team.java
 C:\Users\MumbaiZone\Documents\NetBeansProjects\YourtakeProject\YourtakeProject\src\main\java\com\yourtake\model\pojo\views\View.java
-C:\Users\MumbaiZone\Documents\NetBeansProjects\YourtakeProject\YourtakeProject\src\main\java\com\yourtake\model\dao\UserDAO.java
 C:\Users\MumbaiZone\Documents\NetBeansProjects\YourtakeProject\YourtakeProject\src\main\java\com\yourtake\model\dao\ViewDAO.java
 C:\Users\MumbaiZone\Documents\NetBeansProjects\YourtakeProject\YourtakeProject\src\main\java\com\yourtake\controller\web\UserAuthenticateController.java
+C:\Users\MumbaiZone\Documents\NetBeansProjects\YourtakeProject\YourtakeProject\src\main\java\com\yourtake\service\LoginService.java
+C:\Users\MumbaiZone\Documents\NetBeansProjects\YourtakeProject\YourtakeProject\src\main\java\com\yourtake\model\dao\IndividualDAO.java
 C:\Users\MumbaiZone\Documents\NetBeansProjects\YourtakeProject\YourtakeProject\src\main\java\com\yourtake\model\pojo\setup\Contact.java
 C:\Users\MumbaiZone\Documents\NetBeansProjects\YourtakeProject\YourtakeProject\src\main\java\com\yourtake\backend\service\core\security\JdbcTokenRepositoryCleaner.java
 C:\Users\MumbaiZone\Documents\NetBeansProjects\YourtakeProject\YourtakeProject\src\main\java\com\yourtake\model\pojo\setup\Rule.java

@@ -16,7 +16,7 @@ import org.springframework.stereotype.Repository;
  * @author MumbaiZone
  */
 @Repository
-@Resource("teamDAO")
+@Resource(name="teamDAO")
 public class TeamDAO implements GenericDAO<Team>{
 @Autowired
     SessionFactory sessionFactory;

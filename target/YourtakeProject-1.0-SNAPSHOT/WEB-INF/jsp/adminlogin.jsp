@@ -24,22 +24,22 @@
             <title>Please sign in</title>
              <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
             
-            <link href="<c:url value="/resources/css/images/logo.jpg" />" rel="shortcut icon">
+            <link href="<c:url value='/resources/css/images/logo.jpg' />" rel="shortcut icon">
             
-             <link type="text/css" href="<c:url value="/resources/css/jquery-ui-1.10.4.css" />" rel="stylesheet">
-              <link type="text/css" href="<c:url value="/resources/css/admin.css" />" rel="stylesheet">
-             <link type="text/css" href="<c:url value="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />" rel="stylesheet">
-          <script async type="text/javascript" src="<c:url value="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js" />"></script>
+             <link type="text/css" href="<c:url value='/resources/css/jquery-ui-1.10.4.css' />" rel="stylesheet">
+              <link type="text/css" href="<c:url value='/resources/css/admin.css' />" rel="stylesheet">
+             <link type="text/css" href="<c:url value='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'/>" rel="stylesheet">
+          <script async type="text/javascript" src="<c:url value='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js' />"></script>
           
-            <link type="text/css" href="<c:url value="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css" />" rel="stylesheet">            
+            <link type="text/css" href="<c:url value='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css' />" rel="stylesheet">            
             
          
-             <script  type="text/javascript" src="<c:url value="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"/>"></script>
+             <script  type="text/javascript" src="<c:url value='//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'/>"></script>
           
             
             
             
-            <script type="text/javascript" src="<c:url value="//cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.3.0/bootbox.min.js" />"></script>
+            <script type="text/javascript" src="<c:url value='//cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.3.0/bootbox.min.js' />"></script>
            
            <%--  
            

@@ -16,7 +16,7 @@ import org.springframework.stereotype.Repository;
  * @author MumbaiZone
  */
 @Repository
-@Resource("organizationDAO")
+@Resource(name="organizationDAO")
 public class OrganizationDAO implements GenericDAO<Organization> {
 
     @Autowired
