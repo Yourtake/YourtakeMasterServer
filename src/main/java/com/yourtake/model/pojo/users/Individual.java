@@ -39,6 +39,12 @@ public class Individual implements Serializable {
         this.email=email;
     }
     
+      public Individual(String email, String password, String myRole, Integer power) {
+        this.email=email;
+        this.password=password;
+        this.myRole=myRole;
+        this.power=power;
+    }
 
     public String getEmail() {
         return email;
