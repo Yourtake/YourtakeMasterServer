@@ -6,10 +6,10 @@ package com.yourtake.init;
 
 
 import com.yourtake.model.dao.GenericDAO;
-import com.yourtake.model.dao.OrganizationDAO;
-import com.yourtake.model.dao.TeamDAO;
-import com.yourtake.model.dao.IndividualDAO;
-import com.yourtake.model.dao.ViewDAO;
+import com.yourtake.model.dao.setup.OrganizationDAO;
+import com.yourtake.model.dao.users.TeamDAO;
+import com.yourtake.model.dao.users.IndividualDAO;
+import com.yourtake.model.dao.views.ViewDAO;
 import com.yourtake.model.util.HibernateUtil;
 import org.hibernate.SessionFactory;
 

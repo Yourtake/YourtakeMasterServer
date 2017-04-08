@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.yourtake.model.dao;
+package com.yourtake.model.dao.views;
 
-import com.yourtake.model.pojo.users.Individual;
+import com.yourtake.model.dao.GenericDAO;
+import com.yourtake.model.pojo.views.View;
 import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.Resource;
@@ -19,26 +20,26 @@ import org.springframework.stereotype.Repository;
  * @author MumbaiZone
  */
 @Repository
-@Resource(name="individualDAO")
-public class IndividualDAO implements GenericDAO<Individual>{
+@Resource(name="viewDAO")
+public class ViewDAO implements GenericDAO<View>{
 @Autowired
     SessionFactory sessionFactory;
     
     @Override
-    public Individual create(Individual object) {
+    public View create(View object) {
            Session  session = getSessionFactory().getCurrentSession();
             session.save(object);
-            return (Individual) session.get(Individual.class, object.getEmail());
+            return (View) session.get(View.class, object.getId());
                  
     }
 
     @Override
-    public List<Individual> read(String criteia,Individual object) {
-        List<Individual> list= new ArrayList<>();
+    public List<View> read(String criteia,View object) {
+        List<View> list= new ArrayList<>();
         switch(criteia){
             case "id":
                     Session session = getSessionFactory().getCurrentSession();
-                     list.add((Individual) session.get(Individual.class, object.getEmail()));
+                     list.add((View) session.get(View.class, object.getId()));
                 break;
             default:
                 break;
@@ -48,13 +49,13 @@ public class IndividualDAO implements GenericDAO<Individual>{
     }
 
     @Override
-    public Individual update(Individual object) {
+    public View update(View object) {
        Session session = getSessionFactory().getCurrentSession();
-        return (Individual) session.merge(object);
+        return (View) session.merge(object);
     }
 
     @Override
-    public boolean delete(Individual object) {
+    public boolean delete(View object) {
         return false;
     }
 
@@ -69,5 +70,6 @@ public class IndividualDAO implements GenericDAO<Individual>{
     public void setSessionFactory(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
-
+    
+    
 }

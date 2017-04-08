@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.yourtake.model.dao;
+package com.yourtake.model.dao.views;
 
-import com.yourtake.model.pojo.setup.Organization;
+import com.yourtake.model.dao.GenericDAO;
+import com.yourtake.model.pojo.views.Tab;
 import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.Resource;
@@ -19,26 +20,26 @@ import org.springframework.stereotype.Repository;
  * @author MumbaiZone
  */
 @Repository
-@Resource(name="organizationDAO")
-public class OrganizationDAO implements GenericDAO<Organization> {
+@Resource(name="tabDAO")
+public class TabDAO implements GenericDAO<Tab>{
 @Autowired
     SessionFactory sessionFactory;
     
     @Override
-    public Organization create(Organization object) {
+    public Tab create(Tab object) {
            Session  session = getSessionFactory().getCurrentSession();
             session.save(object);
-            return (Organization) session.get(Organization.class, object.getId());
+            return (Tab) session.get(Tab.class, object.getId());
                  
     }
 
     @Override
-    public List<Organization> read(String criteia,Organization object) {
-        List<Organization> list= new ArrayList<>();
+    public List<Tab> read(String criteia,Tab object) {
+        List<Tab> list= new ArrayList<>();
         switch(criteia){
             case "id":
                     Session session = getSessionFactory().getCurrentSession();
-                     list.add((Organization) session.get(Organization.class, object.getId()));
+                     list.add((Tab) session.get(Tab.class, object.getId()));
                 break;
             default:
                 break;
@@ -48,13 +49,13 @@ public class OrganizationDAO implements GenericDAO<Organization> {
     }
 
     @Override
-    public Organization update(Organization object) {
+    public Tab update(Tab object) {
        Session session = getSessionFactory().getCurrentSession();
-        return (Organization) session.merge(object);
+        return (Tab) session.merge(object);
     }
 
     @Override
-    public boolean delete(Organization object) {
+    public boolean delete(Tab object) {
         return false;
     }
 
@@ -69,5 +70,6 @@ public class OrganizationDAO implements GenericDAO<Organization> {
     public void setSessionFactory(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
+    
     
 }

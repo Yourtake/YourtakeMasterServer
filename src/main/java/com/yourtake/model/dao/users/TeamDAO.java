@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.yourtake.model.dao;
+package com.yourtake.model.dao.users;
 
-import com.yourtake.model.pojo.views.View;
+import com.yourtake.model.dao.GenericDAO;
+import com.yourtake.model.pojo.users.Team;
 import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.Resource;
@@ -19,26 +20,26 @@ import org.springframework.stereotype.Repository;
  * @author MumbaiZone
  */
 @Repository
-@Resource(name="viewDAO")
-public class ViewDAO implements GenericDAO<View>{
+@Resource(name="teamDAO")
+public class TeamDAO implements GenericDAO<Team>{
 @Autowired
     SessionFactory sessionFactory;
     
     @Override
-    public View create(View object) {
+    public Team create(Team object) {
            Session  session = getSessionFactory().getCurrentSession();
             session.save(object);
-            return (View) session.get(View.class, object.getId());
+            return (Team) session.get(Team.class, object.getId());
                  
     }
 
     @Override
-    public List<View> read(String criteia,View object) {
-        List<View> list= new ArrayList<>();
+    public List<Team> read(String criteia,Team object) {
+        List<Team> list= new ArrayList<>();
         switch(criteia){
             case "id":
                     Session session = getSessionFactory().getCurrentSession();
-                     list.add((View) session.get(View.class, object.getId()));
+                     list.add((Team) session.get(Team.class, object.getId()));
                 break;
             default:
                 break;
@@ -48,13 +49,13 @@ public class ViewDAO implements GenericDAO<View>{
     }
 
     @Override
-    public View update(View object) {
+    public Team update(Team object) {
        Session session = getSessionFactory().getCurrentSession();
-        return (View) session.merge(object);
+        return (Team) session.merge(object);
     }
 
     @Override
-    public boolean delete(View object) {
+    public boolean delete(Team object) {
         return false;
     }
 
@@ -69,6 +70,4 @@ public class ViewDAO implements GenericDAO<View>{
     public void setSessionFactory(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
-    
-    
 }

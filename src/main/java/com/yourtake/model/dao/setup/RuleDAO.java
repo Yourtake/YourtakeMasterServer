@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.yourtake.model.dao;
+package com.yourtake.model.dao.setup;
 
-import com.yourtake.model.pojo.users.Team;
+import com.yourtake.model.dao.GenericDAO;
+import com.yourtake.model.pojo.setup.Rule;
 import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.Resource;
@@ -19,26 +20,26 @@ import org.springframework.stereotype.Repository;
  * @author MumbaiZone
  */
 @Repository
-@Resource(name="teamDAO")
-public class TeamDAO implements GenericDAO<Team>{
+@Resource(name="ruleDAO")
+public class RuleDAO implements GenericDAO<Rule> {
 @Autowired
     SessionFactory sessionFactory;
     
     @Override
-    public Team create(Team object) {
+    public Rule create(Rule object) {
            Session  session = getSessionFactory().getCurrentSession();
             session.save(object);
-            return (Team) session.get(Team.class, object.getId());
+            return (Rule) session.get(Rule.class, object.getId());
                  
     }
 
     @Override
-    public List<Team> read(String criteia,Team object) {
-        List<Team> list= new ArrayList<>();
+    public List<Rule> read(String criteia,Rule object) {
+        List<Rule> list= new ArrayList<>();
         switch(criteia){
             case "id":
                     Session session = getSessionFactory().getCurrentSession();
-                     list.add((Team) session.get(Team.class, object.getId()));
+                     list.add((Rule) session.get(Rule.class, object.getId()));
                 break;
             default:
                 break;
@@ -48,13 +49,13 @@ public class TeamDAO implements GenericDAO<Team>{
     }
 
     @Override
-    public Team update(Team object) {
+    public Rule update(Rule object) {
        Session session = getSessionFactory().getCurrentSession();
-        return (Team) session.merge(object);
+        return (Rule) session.merge(object);
     }
 
     @Override
-    public boolean delete(Team object) {
+    public boolean delete(Rule object) {
         return false;
     }
 
@@ -69,4 +70,5 @@ public class TeamDAO implements GenericDAO<Team>{
     public void setSessionFactory(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
+    
 }
