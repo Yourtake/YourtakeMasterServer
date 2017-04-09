@@ -13,6 +13,7 @@ import javax.annotation.Resource;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -20,7 +21,6 @@ import org.springframework.stereotype.Repository;
  * @author MumbaiZone
  */
 @Repository
-@Resource(name="individualDao")
 public class IndividualDAO implements GenericDAO<Individual>{
 @Autowired
     SessionFactory sessionFactory;
@@ -69,6 +69,33 @@ public class IndividualDAO implements GenericDAO<Individual>{
 @Override
     public void setSessionFactory(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
+    }
+    
+    
+     public Individual createInit(Individual object) {
+         Individual admin = (Individual) object;
+         
+         Session session=null;
+        try{
+            session = getSessionFactory().openSession();
+            session.beginTransaction();
+            session.save(admin);
+            admin = (Individual) session.get(Individual.class, admin.getEmail());
+            session.getTransaction().commit();
+        }
+        catch(Exception e){
+            session.getTransaction().rollback();
+            System.out.println("Error in building Individual and its properties at IndividualDAO "+e);
+            e.printStackTrace();
+            admin=null;
+        }
+        finally{
+            if(session.isOpen()){
+                
+            }
+            session=null;
+        }
+        return  admin;
     }
 
 }

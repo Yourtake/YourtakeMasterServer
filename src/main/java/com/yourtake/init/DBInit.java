@@ -21,6 +21,7 @@ import com.yourtake.model.dao.views.ViewDAO;
 import com.yourtake.model.pojo.users.Individual;
 import com.yourtake.model.util.HibernateUtil;
 import org.hibernate.SessionFactory;
+import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
 
 
 /**
@@ -44,7 +45,9 @@ public class DBInit {
         
         dao= new IndividualDAO();
         dao.setSessionFactory(factory);
-        dao.create(new Individual("support@yourtake.in","abcdef","Admin",0));
+        
+            Md5PasswordEncoder encoder = new Md5PasswordEncoder();
+        dao.create(new Individual("support@yourtake.in",encoder.encodePassword("abcdef", null),"Admin",0));
         dao= new TeamDAO();
         dao.setSessionFactory(factory);
         

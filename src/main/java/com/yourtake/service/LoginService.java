@@ -29,7 +29,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class LoginService implements UserDetailsService {
      
      @Autowired
-     @Qualifier("individualDao") 
+     @Qualifier("individualDAO") 
     private GenericDAO individualDAO;   
     private Individual domainUser;
     
