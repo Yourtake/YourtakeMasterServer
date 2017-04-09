@@ -20,7 +20,7 @@ import org.springframework.stereotype.Repository;
  * @author MumbaiZone
  */
 @Repository
-@Resource(name="formInputDAO")
+@Resource(name="formInputDao")
 public class FormInputDAO implements GenericDAO<FormInput>{
 @Autowired
     SessionFactory sessionFactory;

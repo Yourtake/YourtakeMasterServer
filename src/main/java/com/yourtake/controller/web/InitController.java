@@ -23,15 +23,18 @@ public class InitController {
     
      @RequestMapping(value="/")
    public ModelAndView sendHomePage(HttpServletRequest request){
+         System.out.println("Home");
        return new ModelAndView("init");
    }
       @RequestMapping(value="/adminlogin")
    public ModelAndView sendAdminLogin(HttpServletRequest request){
+          System.out.println("login");
        return new ModelAndView("adminlogin");
    }
    
      @RequestMapping(value="/admin")
    public ModelAndView sendAdminPage(HttpServletRequest request){
+         System.out.println("admin");
        return new ModelAndView("adminpage");
    }
    

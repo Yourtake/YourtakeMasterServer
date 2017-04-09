@@ -1,5 +1,4 @@
 com\yourtake\backend\service\core\security\JdbcTokenRepositoryCleaner.class
-com\yourtake\model\dao\IndividualDAO.class
 com\yourtake\controller\web\FeedbackViewController.class
 com\yourtake\model\pojo\users\Team.class
 com\yourtake\init\DBInit.class
@@ -13,14 +12,11 @@ com\yourtake\controller\web\IoTTrackController.class
 com\yourtake\controller\web\OrganizationBuildController.class
 com\yourtake\model\pojo\views\Header.class
 com\yourtake\model\pojo\setup\Contact.class
-com\yourtake\model\dao\TeamDAO.class
-com\yourtake\model\dao\OrganizationDAO.class
 com\yourtake\backend\service\core\security\CsrfSecurityRequestMatcher.class
 com\yourtake\controller\web\ViewBuildController.class
 com\yourtake\model\pojo\views\Page.class
 com\yourtake\model\pojo\views\View.class
 com\yourtake\controller\web\LiveViewController.class
-com\yourtake\model\dao\ViewDAO.class
 com\yourtake\model\util\HibernateUtil.class
 com\yourtake\backend\service\core\login\DefaultAuthenticationSuccessHandler.class
 com\yourtake\model\pojo\setup\Organization.class

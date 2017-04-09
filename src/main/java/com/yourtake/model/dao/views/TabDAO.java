@@ -20,7 +20,7 @@ import org.springframework.stereotype.Repository;
  * @author MumbaiZone
  */
 @Repository
-@Resource(name="tabDAO")
+@Resource(name="tabDao")
 public class TabDAO implements GenericDAO<Tab>{
 @Autowired
     SessionFactory sessionFactory;

@@ -20,7 +20,7 @@ import org.springframework.stereotype.Repository;
  * @author MumbaiZone
  */
 @Repository
-@Resource(name="footerDAO")
+@Resource(name="footerDao")
 public class FooterDAO implements GenericDAO<Footer>{
 @Autowired
     SessionFactory sessionFactory;

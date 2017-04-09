@@ -20,7 +20,7 @@ import org.springframework.stereotype.Repository;
  * @author MumbaiZone
  */
 @Repository
-@Resource(name="organizationDAO")
+@Resource(name="organizationDao")
 public class OrganizationDAO implements GenericDAO<Organization> {
 @Autowired
     SessionFactory sessionFactory;

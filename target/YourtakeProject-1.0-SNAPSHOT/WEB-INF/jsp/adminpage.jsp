@@ -67,39 +67,9 @@
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
             <div class="row">
        
-                <div class="col-xs-3">
-                       <h3 class="form-signin-heading">Custom Analytics</h3>
-                        <br/>
-                     <a href="${pageContext.request.contextPath}/admin/callanalytics/get/recent"><button class="btn btn-sm"   style="background-color:#515151;color:#ffffff"  type="button">Recent Analytics</button></a><br/><br/>
-                  <br/> 
-                     <form action="${pageContext.request.contextPath}/admin/do/analytics" method="GET" class="form-signin-heading" >
-     
-                         <input type="text" class="form-control"  name="fromDate" placeholder="From Date" required="true" value="${fDate}"/><br/>
-                         <input type="text" class="form-control"  name="toDate" placeholder="To Date" required="true" value="${tDate}"/><br/>
-                               <button type="submit" class="btn btn-sm" style="background-color:#515151;color:#ffffff">Do Custom Analytics</button>
-                      </form>
-                     <br/>
-                    </div>
-          <div class="col-xs-3">
-               <h3 class="form-signin-heading">Daily Calling Report</h3>
-                <br/>
-                             <a href="${pageContext.request.contextPath}/admin/do/analytics"><button class="btn btn-sm"   style="background-color:#0081c2;color:#ffffff"  type="button">Generate Today's Report</button></a><br/><br/>
-                   <br/>
-            <form class="form-signin" action="${pageContext.request.contextPath}/admin/callanalytics/get" >                                                               
-               
-                
-                <input type="text" class="form-control"  name='date' placeholder="Date (yyyy-mm-dd)" required>
-                <br/>
-                <button class="btn btn-sm" style="background-color:#0081c2;color:#ffffff" type="submit">Fetch</button>
-              </form>
-               
-                </div>
-                 
                 
              
-            </div>
-               
-                   
+            </div>      
                    
         </div>
     </div>
