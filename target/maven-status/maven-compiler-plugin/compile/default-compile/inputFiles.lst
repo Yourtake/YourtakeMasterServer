@@ -10,7 +10,6 @@ C:\Users\MumbaiZone\Documents\NetBeansProjects\YourtakeProject\YourtakeProject\s
 C:\Users\MumbaiZone\Documents\NetBeansProjects\YourtakeProject\YourtakeProject\src\main\java\com\yourtake\controller\web\ViewBuildController.java
 C:\Users\MumbaiZone\Documents\NetBeansProjects\YourtakeProject\YourtakeProject\src\main\java\com\yourtake\model\pojo\setup\Branch.java
 C:\Users\MumbaiZone\Documents\NetBeansProjects\YourtakeProject\YourtakeProject\src\main\java\com\yourtake\model\pojo\setup\Organization.java
-C:\Users\MumbaiZone\Documents\NetBeansProjects\YourtakeProject\YourtakeProject\src\main\java\com\yourtake\backend\service\core\login\DefaultAuthenticationSuccessHandler.java
 C:\Users\MumbaiZone\Documents\NetBeansProjects\YourtakeProject\YourtakeProject\src\main\java\com\yourtake\backend\service\core\security\CsrfSecurityRequestMatcher.java
 C:\Users\MumbaiZone\Documents\NetBeansProjects\YourtakeProject\YourtakeProject\src\main\java\com\yourtake\controller\web\OrganizationBuildController.java
 C:\Users\MumbaiZone\Documents\NetBeansProjects\YourtakeProject\YourtakeProject\src\main\java\com\yourtake\model\pojo\views\FormInput.java
@@ -24,7 +23,6 @@ C:\Users\MumbaiZone\Documents\NetBeansProjects\YourtakeProject\YourtakeProject\s
 C:\Users\MumbaiZone\Documents\NetBeansProjects\YourtakeProject\YourtakeProject\src\main\java\com\yourtake\model\dao\setup\ContactDAO.java
 C:\Users\MumbaiZone\Documents\NetBeansProjects\YourtakeProject\YourtakeProject\src\main\java\com\yourtake\model\dao\views\HeaderDAO.java
 C:\Users\MumbaiZone\Documents\NetBeansProjects\YourtakeProject\YourtakeProject\src\main\java\com\yourtake\model\dao\views\ViewDAO.java
-C:\Users\MumbaiZone\Documents\NetBeansProjects\YourtakeProject\YourtakeProject\src\main\java\com\yourtake\backend\service\core\login\DefaultAuthenticationFailureHandler.java
 C:\Users\MumbaiZone\Documents\NetBeansProjects\YourtakeProject\YourtakeProject\src\main\java\com\yourtake\model\pojo\users\Team.java
 C:\Users\MumbaiZone\Documents\NetBeansProjects\YourtakeProject\YourtakeProject\src\main\java\com\yourtake\model\pojo\views\View.java
 C:\Users\MumbaiZone\Documents\NetBeansProjects\YourtakeProject\YourtakeProject\src\main\java\com\yourtake\model\dao\views\PageDAO.java

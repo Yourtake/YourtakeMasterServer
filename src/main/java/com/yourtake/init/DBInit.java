@@ -43,11 +43,11 @@ public class DBInit {
         dao= new RuleDAO();
         dao.setSessionFactory(factory);
         
-        dao= new IndividualDAO();
-        dao.setSessionFactory(factory);
+        IndividualDAO iDao= new IndividualDAO();
+        iDao.setSessionFactory(factory);
+        Md5PasswordEncoder encoder = new Md5PasswordEncoder();
+        iDao.createInit(new Individual("support@yourtake.in",encoder.encodePassword("abcdef", null),"ROLE_ADMINISTRATOR",0));
         
-            Md5PasswordEncoder encoder = new Md5PasswordEncoder();
-        dao.create(new Individual("support@yourtake.in",encoder.encodePassword("abcdef", null),"Admin",0));
         dao= new TeamDAO();
         dao.setSessionFactory(factory);
         

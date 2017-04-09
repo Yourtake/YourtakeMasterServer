@@ -10,9 +10,6 @@
            http://www.springframework.org/schema/security/spring-security-3.1.xsd
        http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.0.xsd">
     
-<beans:bean id="adminSuccessHandler" class="com.yourtake.backend.service.core.login.DefaultAuthenticationSuccessHandler"/>
-<beans:bean id="adminFailureHandler" class="com.yourtake.backend.service.core.login.DefaultAuthenticationFailureHandler"/>
-
   <http pattern="/admin/**" auto-config='true' use-expressions="true" authentication-manager-ref="adminManager"> 
       <intercept-url pattern="/admin/j_spring_security_check" access="permitAll"/>
       <intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMINISTRATOR')"  />

@@ -38,14 +38,14 @@ public class LoginService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String login)throws UsernameNotFoundException, DataAccessException {
 
-
+        System.out.println("Logging in "+login);
            domainUser = (Individual) individualDAO.read("id",new Individual(login));
             try{
                 domainUser.getEmail();
                 domainUser.getPassword();
             }
             catch(Exception e){
-                System.out.println("Error in Admin Login Service");
+                System.out.println("Error in User Login Service");
             }
          
          

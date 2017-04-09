@@ -6,7 +6,6 @@ com\yourtake\init\DBInit.class
 com\yourtake\model\dao\GenericDAO.class
 com\yourtake\model\pojo\views\Tab.class
 com\yourtake\model\pojo\users\Individual.class
-com\yourtake\backend\service\core\login\DefaultAuthenticationFailureHandler.class
 com\yourtake\model\dao\setup\OrganizationDAO.class
 com\yourtake\controller\web\UserBuildController.class
 com\yourtake\controller\web\InitController.class
@@ -31,7 +30,6 @@ com\yourtake\model\pojo\views\View.class
 com\yourtake\controller\web\LiveViewController.class
 com\yourtake\model\dao\views\TabDAO.class
 com\yourtake\model\util\HibernateUtil.class
-com\yourtake\backend\service\core\login\DefaultAuthenticationSuccessHandler.class
 com\yourtake\model\pojo\setup\Organization.class
 com\yourtake\model\dao\users\TeamDAO.class
 com\yourtake\model\dao\setup\BranchDAO.class

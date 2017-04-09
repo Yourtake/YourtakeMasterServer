@@ -6,8 +6,13 @@
 package com.yourtake.controller.web;
 
 import com.yourtake.init.DBInit;
+import com.yourtake.model.dao.GenericDAO;
+import com.yourtake.model.pojo.users.Individual;
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.portlet.ModelAndView;
@@ -18,6 +23,11 @@ import org.springframework.web.portlet.ModelAndView;
  */
 @Controller
 public class InitController {
+    
+    @Autowired
+    @Qualifier("individualDAO")
+    GenericDAO dao;
+    
      public InitController() {
     }
     
